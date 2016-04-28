@@ -1,1 +1,44 @@
 
+<h1>Address Book</h1>
+
+#if ($contacts)
+  <ul class="newContacts"> New Contacts
+    #foreach ($contact in $contacts)
+        <li><a href="/contactInfo/$contact.getId()">$contact.getName()</a></li>
+    #end
+  </ul>
+#else
+  <p>No new contacts!</p>
+#end
+
+<p>Add a new Contact:</p>
+
+<form action="/contacts" method="post">
+
+<!--NAME INPUT -->
+
+  <label for="firstName">First Name</label>
+  <input id="firstName" name="firstName" type="text">
+  <label for="lastName">Last Name</label>
+  <input id="lastName" name="lastName" type="text">
+
+  <!--PHONE INPUT -->
+  <label for="phoneNumber">Phone Number</label>
+  <input id="type" name="type" type="text" placeholder="type">
+  <input id="phoneNumber" name="phoneNumber" type="text" placeholder="number">
+
+  <!--EMAIL INPUT -->
+
+  <label for="phoneNumber">Email</label>
+  <input id="emailType" name="emailType" type="text" placeholder="type">
+  <input id="emailAddress" name="emailAddress" type="text" placeholder="something@example.com">
+
+  <!-- ADDRESS INPUT -->
+
+  <label for="phoneNumber">Address</label>
+  <input id="addressType" name="addressType" type="text" placeholder="Address Type">
+  <input id="address" name="address" type="text" placeholder="Enter Address">
+
+
+  <button type="submit" class="btn btn-default">Add contact</button>
+</form>

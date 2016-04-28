@@ -1,1 +1,25 @@
+<div class="row"
+  <div class="col-md-6">
+    <h1>$contact.getName()</h1>
+      <ul>
+        #if (!($contact.getBirthMonth()))
+          <li>No BirthMonth</li>
+        #else
+        <li>$contact.getBirthMonth()</li>
+        #end
+        #if ($contact.getEmail() == "{}")
+          <li>No Email</li>
+        #else
+        <li>$contact.getEmail()</li>
+        #end
+        #if ($contact.getContactPhone() == " : ")
+          <li>No Phone</li>
+        #else
+        <li>$contact.getContactPhone()</li>
+        #end
 
+        <li>$contact.getAddress()</li>
+      </ul>
+
+  </div>
+</div>

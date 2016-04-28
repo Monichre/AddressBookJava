@@ -16,20 +16,21 @@ public class AppTest extends FluentTest {
 
   @ClassRule
   public static ServerRule server = new ServerRule();
-  // 
-  // @Test
-  // public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("Welcome to the Vowel Game!");
-  // }
-  //
-  // @Test
-  // public void VowelsRemoved() {
-  //   goTo("http://localhost:4567");
-  //   fill("#vowelGame").with("Epicodus");
-  //   submit("button");
-  //   assertThat(pageSource()).contains("-p-c-d-s");
-  // }
+
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Address Book");
+  }
+
+  @Test
+  public void AddressBook() {
+    goTo("http://localhost:4567");
+    fill("#firstName").with("Patrick");
+    fill("#lastName").with("Wells");
+    submit("button");
+    assertThat(pageSource()).contains("Patrick Wells");
+  }
 
 
 }
